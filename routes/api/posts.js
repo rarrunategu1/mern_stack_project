@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const passport = require('passport'); //will be used fo protected routes
 
 
-//@route    GET api/profile/test
-//@desc     Tests profile route
+//@route    GET api/posts/test
+//@desc     Tests post route
 //@access   Public
-router.get('/test', (req, res) => res.json({msg: 'Profile Works'}));
+router.get('/test', (req, res) => res.json({msg: 'Posts Works'}));
 
 
 module.exports = router;
