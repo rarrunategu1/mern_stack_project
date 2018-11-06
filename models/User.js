@@ -17,7 +17,7 @@ const UserSchema = new Schema({
     },
     avatar: {
         type: String,
-        required: true  //because it'll be an image they chose or just a placeholder
+        
     },
     date: {
         type: Date,
