@@ -15,6 +15,17 @@ const validatePostInput = require('../../validation/post');
 //@access   Public
 router.get('/test', (req, res) => res.json({msg: 'Posts Works'}));
 
+//@route    GET api/posts
+//@desc     Get posts  //so that anyone can read posts
+//@access   Public
+router.get('/', (req, res) => {
+  Post.find()
+    .sort({ date: -1 })
+    .then(posts => res.json(posts))
+    .catch(err => res.status(404));
+})
+
+
 //@route    POST api/posts
 //@desc     Create post
 //@access   Private -we don't want just anyone to write a post
