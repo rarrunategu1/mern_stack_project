@@ -4,6 +4,9 @@
   "description": "devconnector",
   "main": "server.js",
   "scripts": {
+    "my-app-install": "npm install --prefix my-app",
+    "my-app": "npm start --prefix my-app",
+    "dev": "concurrently \"npm run my-app\" \"npm run server\"",
     "start": "node server.js",
     "server": "nodemon server.js"
   },
@@ -20,11 +23,14 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "express": "^4.16.4",
+    "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.9",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react-gravatar": "^2.6.3",
     "validator": "^9.4.1"
   },
   "devDependencies": {
