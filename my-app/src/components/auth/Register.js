@@ -9,7 +9,13 @@ class Register extends Component {
             password: '',
             password2: '',
             errors: {}
-        }
+        };
+        
+        this.onChange = this.onChange.bind(this); //binds "this" so that it can be used in the change event function
+    }
+    
+    onChange(event) {
+        this.setState({[event.target.name]: event.target.value});
     }
     
     render() {
@@ -27,7 +33,8 @@ class Register extends Component {
               className="form-control form-control-lg" 
               placeholder="Name" 
               name="name" 
-              value={this.state.name} 
+              value={this.state.name}
+              onChange={this.onChange}
               required />
             </div>
             <div className="form-group">
@@ -36,8 +43,9 @@ class Register extends Component {
               className="form-control form-control-lg" 
               placeholder="Email Address" 
               name="email"
-              value={this.state.email}/>
-              <small classNameName="form-text text-muted">This site uses Gravatar so if you want a profile image, use a Gravatar email</small>
+              value={this.state.email}
+              onChange={this.onChange}/>
+              <small className="form-text text-muted">This site uses Gravatar so if you want a profile image, use a Gravatar email</small>
             </div>
             <div className="form-group">
               <input 
@@ -45,7 +53,8 @@ class Register extends Component {
               className="form-control form-control-lg" 
               placeholder="Password" 
               name="password"
-              value={this.state.password}/>
+              value={this.state.password}
+              onChange={this.onChange}/>
             </div>
             <div className="form-group">
               <input 
@@ -53,7 +62,8 @@ class Register extends Component {
               className="form-control form-control-lg" 
               placeholder="Confirm Password" 
               name="password2"
-              value={this.state.password2}/>
+              value={this.state.password2}
+              onChange={this.onChange}/>
             </div>
             <input type="submit" className="btn btn-info btn-block mt-4" />
           </form>
