@@ -9,11 +9,13 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
         <Navbar />
-        <Landing />
+        <Route exact path= "/" component={ Landing } />
         <Footer />
       </div>
+      </Router>
     );
   }
 }
