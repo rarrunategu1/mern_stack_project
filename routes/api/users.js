@@ -10,6 +10,7 @@ const passport = require('passport');
 //Load Input Validaton
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+
 //Load User model
 const User = require('../../models/User');
 
@@ -28,8 +29,8 @@ router.post('/register', (req, res) => {
   
   //check validation
     if(!isValid) {
-      return res.status(400).json(errors)
-    };
+      return res.status(400).json(errors);
+    }
   
     User.findOne({ email: req.body.email })
         .then(user => {
@@ -56,7 +57,7 @@ router.post('/register', (req, res) => {
                         newUser
                             .save()
                             .then(user => res.json(user))
-                            .catch(err => console.log(err))
+                            .catch(err => console.log(err));
                     });
                 });
             }

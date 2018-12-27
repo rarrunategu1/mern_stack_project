@@ -27,11 +27,12 @@ class Register extends Component {
             email: this.state.email,
             password: this.state.password,
             password2: this.state.password2
-        }
+        };
         
-        axios.post('/api/users/register', newUser)
+        axios
+          .post('https://careerdevsintermediate-titamandarica.c9users.io:8081/api/users/register', newUser)
           .then(res => console.log(res.data))//logs new user on submit
-          .catch(err => console.log(err))
+          .catch(err => console.log(err.response.data));
     }
     
     render() {
