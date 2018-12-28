@@ -120,7 +120,8 @@ class Register extends Component {
 //mapping prop types
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
 };
 
 //to get the auth state in the component
