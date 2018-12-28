@@ -18,6 +18,13 @@ class Register extends Component {
         this.onChange = this.onChange.bind(this); //binds "this" so that it can be used in the change event function
         this.onSubmit = this.onSubmit.bind(this);
     }
+    //lifecycle method which will run when component receives new properties
+    componentWillReceiveProps(nextProps) {
+      //test for errors prop
+      if(nextProps.errors) {
+        this.setState({errors: nextProps.errors});
+      }
+    }
     
     onChange(event) {
         this.setState({[event.target.name]: event.target.value});
@@ -39,11 +46,8 @@ class Register extends Component {
       //if there are errors, they'll be here
       const { errors } = this.state; //this destructuring is the same as const errors = this.state.errors;
       
-      const { user } = this.props.auth;
-      
         return(
           <div className="register">
-          {user ? user.name : null}
             <div className="container">
               <div className="row">
                 <div className="col-md-8 m-auto">
@@ -121,7 +125,7 @@ Register.propTypes = {
 
 //to get the auth state in the component
 const mapStateToProps = (state) => ({
-  auth: state.auth //this comes from the root reducer
+  auth: state.auth, //this comes from the root reducer
   errors: state.errors
 });
 
