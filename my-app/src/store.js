@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';  //root reducer is index.js file in reducers
 
@@ -6,6 +6,14 @@ const initialState = {};
 
 const middleware = [thunk];
 
-const store = createStore(rootReducer, initialState, applyMiddleware(...middleware)); //first parameter is root reducer
+const store = createStore(
+    rootReducer, 
+    initialState,
+    compose(
+        applyMiddleware(...middleware),
+        //implement redux dev tools
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+    ); 
 
 export default store;
