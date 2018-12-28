@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; //to map any properties I have in my component
-import axios from 'axios';
+//import axios from 'axios';
 import classnames from 'classnames';
-import { connect } from 'react-redux'; //to use redux in a component
+import { connect } from 'react-redux'; //to connect redux in a component
 import { registerUser } from '../../actions/authActions';
 
 class Register extends Component {
@@ -46,6 +46,7 @@ class Register extends Component {
       const { errors } = this.state; //this destructuring is the same as const errors = this.state.errors;
       
       const { user } = this.props.auth;
+      
         return(
           <div className="register">
           {user ? user.name : null}
