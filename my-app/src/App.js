@@ -13,6 +13,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <Provider>
       <Router>
       <div className="App">
         <Navbar />
@@ -24,6 +25,7 @@ class App extends Component {
         <Footer />
       </div>
       </Router>
+      </Provider>
     );
   }
 }
