@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; //to map any properties I have in my component
-//import axios from 'axios';
 import classnames from 'classnames';
 import { connect } from 'react-redux'; //to connect redux in a component
 import { registerUser } from '../../actions/authActions';
@@ -34,11 +33,6 @@ class Register extends Component {
         };
         
         this.props.registerUser(newUser);
-        
-        // axios
-        //   .post('/api/users/register', newUser)
-        //   .then(res => console.log(res.data))//logs user on submit
-        //   .catch(err => this.setState({errors: err.response.data})); //will give the object we're sending back in errors
     }
     
     render() {
