@@ -122,6 +122,7 @@ Register.propTypes = {
 //to get the auth state in the component
 const mapStateToProps = (state) => ({
   auth: state.auth //this comes from the root reducer
+  errors: state.errors
 });
 
 export default connect(mapStateToProps, { registerUser })(Register); //connect for redux
