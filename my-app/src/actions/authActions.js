@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TEST_DISPATCH } from './types';
+import { GET_ERRORS } from './types';
 
 // Register User
 export const registerUser = (userData) => dispatch => {
