@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; //to map any properties I have in my component
+import { withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import { connect } from 'react-redux'; //to connect redux in a component
 import { registerUser } from '../../actions/authActions';
@@ -39,7 +40,7 @@ class Register extends Component {
             password2: this.state.password2
         };
         
-        this.props.registerUser(newUser);
+        this.props.registerUser(newUser, this.props.history);  //allows us to use to redirect from within
     }
     
     render() {
@@ -130,4 +131,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { registerUser })(Register); //connect for redux
+export default connect(mapStateToProps, { registerUser })(withRouter(Register)); //connect for redux
