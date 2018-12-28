@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'; //provides app with store which holds the state
+import { createStore, applyMiddleware } from 'redux';
 
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -10,10 +11,12 @@ import Register from './components/auth/Register';
 
 import './App.css';
 
+const store = createStore(() => [], {}, applyMiddleware());
+
 class App extends Component {
   render() {
     return (
-      <Provider>
+      <Provider store= { store }>
       <Router>
       <div className="App">
         <Navbar />
