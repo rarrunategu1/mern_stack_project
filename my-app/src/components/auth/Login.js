@@ -21,7 +21,7 @@ class Login extends Component {
             password: this.state.password
         };
         
-        console.log(user); //logs new user on submit
+        console.log(user); //logs user on submit
         
     }
     
@@ -52,8 +52,8 @@ class Login extends Component {
               className="form-control form-control-lg" 
               placeholder="Password" 
               name="password"
-              value = {this.state.password}
-              onChange = {this.onChange}
+              value={this.state.password}
+              onChange={this.onChange}
               />
             </div>
             <input type="submit" 

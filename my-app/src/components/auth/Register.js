@@ -30,9 +30,9 @@ class Register extends Component {
         };
         
         axios
-          .post('https://careerdevsintermediate-titamandarica.c9users.io:8081/api/users/register', newUser)
-          .then(res => console.log(res.data))//logs new user on submit
-          .catch(err => console.log(err.response.data));
+          .post('/api/users/register', newUser)
+          .then(res => console.log(res.data))//logs user on submit
+          .catch(err => console.log(err.response.data)); //will give the object we're sending back in errors
     }
     
     render() {
