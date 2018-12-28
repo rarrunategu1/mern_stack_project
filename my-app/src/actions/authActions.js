@@ -1,10 +1,16 @@
+import axios from 'axios';
 import { TEST_DISPATCH } from './types';
 
 // Register User
-export const registerUser = (userData) => {
+export const registerUser = (userData) => dispatch => {
     //dispatch something to our reducer
-    return {
-        type: TEST_DISPATCH,
-        payload: userData  //will dispatch this to the reducer along with the dispatch data
-    };
+    axios
+          .post('/api/users/register', userData)
+          .then(res => console.log(res.data))//redirect if successful
+          .catch(err => 
+          dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data
+          })
+         );
 };
