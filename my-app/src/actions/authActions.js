@@ -8,10 +8,7 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 export const registerUser = (userData, history) => dispatch => {
   //dispatch something to our reducer
   axios
-    .post(
-      "https://careerdevsintermediate-titamandarica.c9users.io:8081/api/users/register",
-      userData
-    )
+    .post("/api/users/register", userData)
     .then(res => history.push("/login")) //redirect if successful
     .catch(err =>
       dispatch({
@@ -28,12 +25,16 @@ export const loginUser = userData => dispatch => {
     .then(res => {
       //save to local storage
       const { token } = res.data;
+
       //set token to local storage
       localStorage.setItem("jwtToken", token); //only stores strings
-      //set toke to Auth header
+
+      //set token to Auth header
       setAuthToken(token);
+
       //decode token to get user data
       const decoded = jwt_decode(token);
+
       //set current user
       dispatch(setCurrentUser(decoded));
     })
