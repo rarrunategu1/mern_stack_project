@@ -29,10 +29,6 @@ class Login extends Component {
     }
   }
 
-  onChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
   onSubmit(event) {
     event.preventDefault();
 
@@ -42,6 +38,10 @@ class Login extends Component {
     };
 
     this.props.loginUser(userData); //logs user on submit
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
@@ -56,12 +56,11 @@ class Login extends Component {
               <p className="lead text-center">
                 Sign in to your DevConnector account
               </p>
-              <form noValidate onSubmit={this.onSubmit}>
+              <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <input
                     type="email"
                     className={classnames("form-control form-control-lg", {
-                      //form controls here are classnames that are always going to be used
                       "is-invalid": errors.email //this will only happen if there is an error with the name and it will make the outline red
                     })}
                     placeholder="Email Address"
