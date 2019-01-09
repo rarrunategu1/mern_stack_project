@@ -21,23 +21,15 @@ export const registerUser = (userData, history) => dispatch => {
 //Login - get user token
 export const loginUser = userData => dispatch => {
   axios
-<<<<<<< HEAD
-    .post("/api/user/login", userData)
-=======
     .post("/api/users/login", userData)
->>>>>>> 44_functional_login_form
     .then(res => {
       //save to local storage
       const { token } = res.data;
 
       //set token to local storage
       localStorage.setItem("jwtToken", token); //only stores strings
-<<<<<<< HEAD
-      //set toke to Auth header
-=======
 
       //set token to Auth header
->>>>>>> 44_functional_login_form
       setAuthToken(token);
 
       //decode token to get user data
