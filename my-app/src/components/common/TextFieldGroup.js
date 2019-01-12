@@ -18,7 +18,7 @@ const TextFieldGroup = ({
       <input
         type={type}
         className={classnames("form-control form-control-lg", {
-          "is-invalid": errors.email //this will only happen if there is an error with the name and it will make the outline red
+          "is-invalid": error //this will only happen if there is an error with the name and it will make the outline red
         })}
         placeholder={placeholder}
         name={name}
