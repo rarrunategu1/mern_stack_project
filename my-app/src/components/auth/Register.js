@@ -20,6 +20,12 @@ class Register extends Component {
     this.onChange = this.onChange.bind(this); //binds "this" so that it can be used in the change event function
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
   //lifecycle method which will run when component receives new properties
   componentWillReceiveProps(nextProps) {
     //test for errors prop
