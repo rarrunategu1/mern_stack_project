@@ -18,6 +18,13 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  //if user is authenticated it will push to the dashboard.
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
