@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser } from "./actions/authActions";
 import { logOutUser } from "./actions/authActions";
+import { clearCurrentProfile } from "./actions/profileActions";
 
 import { Provider } from "react-redux"; //provides app with store which holds the state
 import store from "./store";
