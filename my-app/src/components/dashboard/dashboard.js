@@ -12,7 +12,18 @@ class Dashboard extends Component {
   }
 }
 
+Dashboard.propTypes = {
+  getCurrentProfile: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  profile: state.profile,
+  auth: stat.auth;
+})
+
 export default connect(
-  null,
+  mapStateToProps,
   { getCurrentProfile }
 )(Dashboard);
