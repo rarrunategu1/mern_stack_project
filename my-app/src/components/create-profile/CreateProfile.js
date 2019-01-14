@@ -41,8 +41,59 @@ class CreateProfile extends Component {
     this.setState({ [e.target.name]: e.taret.value });
   }
   render() {
-    const { errors } = this.state;
+    const { errors, displaySocialInputs } = this.state;
 
+    let socialInputs;
+
+    if (displaySocialInputs) {
+      socialInputs = (
+        <div>
+          <InputGroup
+            placeholder="Twitter Profile URL"
+            name="twitter"
+            icon="fab fa-twitter"
+            value={this.state.twitter}
+            onChange={this.onChange}
+            error={errors.twitter}
+          />
+
+          <InputGroup
+            placeholder="Facebook Profile URL"
+            name="facebook"
+            icon="fab fa-facebook"
+            value={this.state.facebook}
+            onChange={this.onChange}
+            error={errors.facebook}
+          />
+
+          <InputGroup
+            placeholder="Linkedin Profile URL"
+            name="linkedin"
+            icon="fab fa-linkedin"
+            value={this.state.linkedin}
+            onChange={this.onChange}
+            error={errors.linkedin}
+          />
+
+          <InputGroup
+            placeholder="Youtube Channel URL"
+            name="youtube"
+            icon="fab fa-youtube"
+            value={this.state.youtube}
+            onChange={this.onChange}
+            error={errors.youtube}
+          />
+          <InputGroup
+            placeholder="Instagram Page URL"
+            name="instagram"
+            icon="fab fa-instagram"
+            value={this.state.instagram}
+            onChange={this.onChange}
+            error={errors.instagram}
+          />
+        </div>
+      );
+    }
     //SelectList Options for status
     const options = [
       { label: "* Select Professional Status", value: 0 },
@@ -146,6 +197,12 @@ class CreateProfile extends Component {
                 </button>
                 <span className="text-muted">Optional</span>
               </div>
+              {socialInputs}
+              <input
+                type="submit"
+                value="Submit"
+                className="btn btn-info btn-block mt-4"
+              />
             </form>
           </div>
         </div>
