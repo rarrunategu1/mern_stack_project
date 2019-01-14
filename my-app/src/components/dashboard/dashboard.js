@@ -21,7 +21,13 @@ class Dashboard extends Component {
       //Check if logged in user has profile data
       //means there is something in there
       if (Object.keys(profile).length > 0) {
-        dashboardContent = <h4>TODO: DISPLAY PROFILE</h4>;
+        dashboardContent = (
+          <div>
+            <p className="lead text-muted">
+              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+            </p>
+          </div>
+        );
       } else {
         //user is logged in but has no profile
         dashboardContent = (
