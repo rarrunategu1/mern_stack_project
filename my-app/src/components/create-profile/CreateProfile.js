@@ -52,8 +52,7 @@ class CreateProfile extends Component {
               Let's get some information to make your profile stand out
             </p>
             <small className="d-block pb-3">* = required fields</small>
-            <form>
-              onSubmit={this.onSubmit}
+            <form onSubmit={this.onSubmit}>
               <TextFieldGroup
                 placeholder="*Profile Handle"
                 name="handle"
