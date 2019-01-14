@@ -124,6 +124,14 @@ class CreateProfile extends Component {
                 error={errors.githubusername}
                 info="If you'd like your latest rep0s and a Github link, include your username"
               />
+              <TextAreaFieldGroup
+                placeholder="Short Bio"
+                name="bio"
+                value={this.state.bio}
+                onChange={this.onChange}
+                error={errors.bio}
+                info="Tell us a little about yourself"
+              />
             </form>
           </div>
         </div>
