@@ -12,7 +12,7 @@ class AddEducation extends Component {
     this.state = {
       school: "",
       degree: "",
-      fieldofstudy: "",
+      fieldOfStudy: "",
       from: "",
       to: "",
       current: false,
@@ -39,7 +39,7 @@ class AddEducation extends Component {
     const eduData = {
       school: this.state.school,
       degree: this.state.degree,
-      fieldofstudy: this.state.fieldofstudy,
+      fieldOfStudy: this.state.fieldOfStudy,
       from: this.state.from,
       to: this.state.to,
       current: this.state.current,
@@ -95,10 +95,10 @@ class AddEducation extends Component {
 
                 <TextFieldGroup
                   placeholder="* Field Of Study"
-                  name="fieldofstudy"
-                  value={this.state.fieldofstudy}
+                  name="fieldOfStudy"
+                  value={this.state.fieldOfStudy}
                   onChange={this.onChange}
-                  error={errors.fieldofstudy}
+                  error={errors.fieldOfStudy}
                 />
                 <h6>From Date</h6>
                 <TextFieldGroup
@@ -128,7 +128,7 @@ class AddEducation extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
-                    Current Job
+                    Current School
                   </label>
                 </div>
                 <TextFieldGroup
