@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import TextFieldGroup from "../common/TextFieldGroup";
-import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+//import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -20,6 +20,28 @@ class AddExperience extends Component {
       //blacks out to: field if they check current
       disabled: false
     };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onCheck = this.onCheck.bind(this);
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    console.log("submit");
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  //change disabled state and change current to the opposite of the state that it's in.
+  onCheck(e) {
+    this.setState({
+      disabled: !this.state.disabled,
+      current: !this.state.current
+    });
   }
 
   render() {
