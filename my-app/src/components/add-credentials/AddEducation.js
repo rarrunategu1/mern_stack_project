@@ -36,7 +36,7 @@ class AddEducation extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const expData = {
+    const eduData = {
       school: this.state.school,
       degree: this.state.degree,
       fieldofstudy: this.state.fieldofstudy,
@@ -94,7 +94,7 @@ class AddEducation extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="Field Of Study"
+                  placeholder="* Field Of Study"
                   name="fieldofstudy"
                   value={this.state.fieldofstudy}
                   onChange={this.onChange}
