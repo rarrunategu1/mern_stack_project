@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
 import Moment from "react-moment";
 import { deleteExperience } from "../../actions/profileActions";
 
 class Experience extends Component {
   onDeleteClick(id) {
-    this.props.deleteExperience(id, this.props.history);
+    this.props.deleteExperience(id);
   }
   render() {
     //map through array and render a table row for each experience
@@ -59,4 +58,4 @@ Experience.propTypes = {
 export default connect(
   null,
   { deleteExperience }
-)(withRouter(Experience));
+)(Experience);
