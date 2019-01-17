@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Spinner from "../common/Spinner";
-import { getProfiles } from "../../action/profileActions";
+import { getProfiles } from "../../actions/profileActions";
 
 class Profiles extends Component {
   //calls getProfiles as soon as component mounted
@@ -19,7 +19,7 @@ class Profiles extends Component {
       profileItems = <Spinner />;
     } else {
       if (profiles.length > 0) {
-        <h1>PROFILES HERE</h1>;
+        profileItems = <h1>PROFILES HERE</h1>;
       } else {
         profileItems = <h4>No profiles found...</h4>;
       }
