@@ -66,4 +66,8 @@ class ProfileGithub extends Component {
   }
 }
 
+ProfileGithub.propTypes = {
+  username: PropTypes.string.isRequired
+};
+
 export default ProfileGithub;
