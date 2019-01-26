@@ -58,7 +58,9 @@ class ProfileGithub extends Component {
 
     return (
       <div>
-        <h1>TODO: PROFILE GITHUB</h1>
+        <hr />
+        <h3 className="mb-4">Latest Github Repos</h3>
+        {repoItems}
       </div>
     );
   }
