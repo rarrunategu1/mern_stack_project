@@ -6,6 +6,9 @@ import Spinner from "../common/Spinner";
 import { getPosts } from "../../actions/postActions";
 
 class Posts extends Component {
+  componentDidMount() {
+    this.props.getPosts();
+  }
   render() {
     return (
       <div className="feed">
