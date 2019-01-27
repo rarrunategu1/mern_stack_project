@@ -15,11 +15,28 @@ class PostForm extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+  //will check for errors
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors) {
+      this.setState({ errors: newProps.errors });
+    }
+  }
 
   onSubmit(e) {
     e.preventDefault();
 
-    console.log("submit");
+    //get user from the auth to know who submitted the post
+    const { user } = this.props.auth;
+
+    const newPost = {
+      text: this.state.text,
+      name: user.name,
+      avatar: user.avatar
+    };
+
+    this.props.addPost(newPost);
+    //Clears text field after post submitted
+    this.setState({ text: "" });
   }
 
   onChange(e) {
