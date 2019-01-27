@@ -25,13 +25,13 @@ class Posts extends Component {
 }
 
 Posts.propTypes = {
-  getPosts: PropTypes.funct.isRequired,
+  getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => {
-  post: state.post;
-};
+const mapStateToProps = state => ({
+  post: state.post
+});
 
 export default connect(
   mapStateToProps,
