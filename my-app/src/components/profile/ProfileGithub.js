@@ -41,7 +41,7 @@ class ProfileGithub extends Component {
                 href={repo.html_url}
                 className="text-info"
                 target="_blank"
-                rel="noopener noreferrer"
+                // rel="noopener noreferrer"
               >
                 {repo.name}
               </a>
