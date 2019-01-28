@@ -48,7 +48,7 @@ export const getPosts = () => dispatch => {
 //Delete Post
 export const deletePost = id => dispatch => {
   axios
-    .delete(`/api/posts/${id}`, postData)
+    .delete(`/api/posts/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_POST,
