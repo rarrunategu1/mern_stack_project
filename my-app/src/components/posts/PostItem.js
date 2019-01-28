@@ -17,6 +17,15 @@ class PostItem extends Component {
   onUnlikeClick(id) {
     this.props.removeLike(id);
   }
+
+  findUserLIke(likes) {
+    const { auth } = this.props;
+    if (likes.filter(like => like.user === auth.user.id).length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   render() {
     const { post, auth } = this.props;
 
@@ -41,7 +50,11 @@ class PostItem extends Component {
               type="button"
               className="btn btn-light mr-1"
             >
-              <i className="text-info fas fa-thumbs-up" />
+              <i
+                className={classnames("fas fa-thumbs-up", {
+                  "text-info": this.findUserLIke(post.likes)
+                })}
+              />
               <span className="badge badge-light">{post.likes.length}</span>
             </button>
             <button
