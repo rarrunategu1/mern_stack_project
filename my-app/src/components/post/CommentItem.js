@@ -5,6 +5,10 @@ import PropTypes from "prop-types";
 import { deleteComment } from "../../actions/postActions";
 
 class CommentItem extends Component {
+  onDeleteClick(postId, commentId) {
+    this.props.deleteComment(postId, commentId);
+  }
+
   render() {
     const { comment, postId, auth } = this.props;
 
@@ -53,5 +57,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { deleteComent }
+  { deleteComment }
 )(CommentItem);
