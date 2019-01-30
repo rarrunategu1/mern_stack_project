@@ -37,7 +37,7 @@ class CommentForm extends Component {
       avatar: user.avatar
     };
 
-    this.props.addComment(postId, newPost);
+    this.props.addComment(postId, newComment);
     //Clears text field after post submitted
     this.setState({ text: "" });
   }
