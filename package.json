@@ -1,6 +1,9 @@
 {
   "name": "mern_stack",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.15.0"
+  },
   "description": "devconnector",
   "main": "server.js",
   "scripts": {
