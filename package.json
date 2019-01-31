@@ -2,6 +2,9 @@
   "name": "mern_stack",
   "version": "1.0.0",
   "description": "devconnector",
+  "engines": {
+    "node": "10.15.0"
+  },
   "main": "server.js",
   "scripts": {
     "my-app-install": "npm install --prefix my-app",
