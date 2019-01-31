@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
@@ -35,6 +36,17 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
+
+//Server static assets if in production
+//check to see if on our server on heroku
+if (process.env.NODE_ENV === "production") {
+  //set static folder to my-app build
+  app.use(express.static("my-app/build"));
+  //for any route that it finds it will load the react index.html file
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "my-app", "build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 5000; //server checks for port or goes to port number 5000
 
