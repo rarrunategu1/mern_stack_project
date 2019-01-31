@@ -1,5 +1,5 @@
 #keys
-/config
+/config/keys_dev.js
 
 # dependencies
 /node_modules
